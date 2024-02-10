@@ -60,3 +60,8 @@ app.post("/api/notes", (req, res) => {
 
       notesList.push(newNote)
     }});
+
+
+    app.listen(PORT, () =>
+    console.log(`Note taker app listening at http://localhost:${PORT}`)
+  );
