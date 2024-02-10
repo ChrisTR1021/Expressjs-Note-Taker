@@ -46,7 +46,7 @@ app.post("/api/notes", (req, res) => {
         (writeErr) =>
           writeErr
             ? console.error(writeErr)
-            : console.info("New note has been added successfully.")
+            : console.info("A new note has been successfully added.")
       );
       console.log(notesList);
   res.json(newNote);
