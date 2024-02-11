@@ -27,3 +27,28 @@ app.get('/notes', (req, res) => {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
+
+
+function createNote(body, notesArray) {
+  const notedPerk = body;
+  if (!Array.isArray(notesArray))
+      notesArray = [];
+  
+  if (notesArray.length === 0)
+      notesArray.push(0);
+
+  body.id = notesArray[0];
+  notesArray[0]++;
+
+  notesArray.push(notedPerk);
+  fs.writeFileSync(
+      path.join(__dirname, './db/db.json'),
+      JSON.stringify(notesArray, null, 2)
+  );
+  return notedPerk;
+}
+
+app.post('/api/notes', (req, res) => {
+  const notedPerk = createNote(req.body, allNotes);
+  res.json(notedPerk);
+});
