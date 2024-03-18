@@ -14,6 +14,9 @@ The app is supposed to write, save and allow you to delete notes. The app has st
 run npm i 
 
 ## Usage 
+https://notetaker10-06409479113e.herokuapp.com/notes
+
+link is available but still needs work
 
 
 ## License
